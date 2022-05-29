@@ -3,6 +3,7 @@ package me.ez.heartmod;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
@@ -14,6 +15,7 @@ public class Main
     public Main()
     {
         Init.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(EventPriority.HIGHEST, EntityHeartDropEvent::entityHeartDropEvent);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
