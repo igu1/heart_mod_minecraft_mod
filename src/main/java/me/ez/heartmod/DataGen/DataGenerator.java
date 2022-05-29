@@ -1,4 +1,4 @@
-package me.ez.heartmod.Common.DataGen;
+package me.ez.heartmod.DataGen;
 
 import me.ez.heartmod.Main;
 import net.minecraftforge.common.data.ExistingFileHelper;

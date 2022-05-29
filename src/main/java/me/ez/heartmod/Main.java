@@ -4,6 +4,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(Main.MOD_ID)
 public class Main
@@ -12,6 +13,7 @@ public class Main
     public static final CreativeModeTab TAP = new Hearts("hearts");
     public Main()
     {
+        Init.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
         MinecraftForge.EVENT_BUS.register(this);
     }
 
