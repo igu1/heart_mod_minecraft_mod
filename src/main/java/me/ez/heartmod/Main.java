@@ -1,11 +1,15 @@
 package me.ez.heartmod;
 
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.jetbrains.annotations.NotNull;
 
 @Mod(Main.MOD_ID)
 public class Main
@@ -14,15 +18,11 @@ public class Main
     public static final CreativeModeTab TAP = new Hearts("hearts");
     public Main()
     {
+        Init.HEARTS.register(FMLJavaModLoadingContext.get().getModEventBus());
         Init.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(EventPriority.HIGHEST, EntityHeartDropEvent::entityHeartDropEvent);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-
-    @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-    public static class RegistryEvents{
-    }
 
     public static class Hearts extends CreativeModeTab{
 
@@ -31,7 +31,7 @@ public class Main
         }
 
         @Override
-        public ItemStack makeIcon() {
+        public @NotNull ItemStack makeIcon() {
             return Init.NORMAL_HEART.get().getDefaultInstance();
         }
     }
