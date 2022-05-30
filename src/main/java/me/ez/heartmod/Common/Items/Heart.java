@@ -45,12 +45,16 @@ public class Heart extends Item {
     @Override
     public ItemStack finishUsingItem(ItemStack itemStack, Level level, LivingEntity entity) {
         if (!level.isClientSide){
+            System.out.println("-----> Client Side");
             if (entity instanceof Player player){
               if (!player.getAbilities().instabuild){
                     entity.setHealth(entity.getHealth() + healthAmount);
-                }
+                    System.out.println("-----> Health Increased By " + entity.getHealth() + healthAmount);
+              }
                 giveItemAbilityToPlayer(itemStack, level, entity);
             }
+        }else {
+            System.out.println("-----> Server Side");
         }
         return super.finishUsingItem(itemStack, level, entity);
     }
@@ -59,97 +63,42 @@ public class Heart extends Item {
         int tick = 20;
         int sec  = 60;
         if (effect != null) {
+            System.out.println("-----> Effect Added");
             entity.addEffect(new MobEffectInstance(effect, 1, (int) minuteEffect * sec * tick)); // min
         }
         if (customEffect) {
+            System.out.println("-----> Custom Effect Adding");
             addCustomEffect(itemStack, level, entity);
         }
     }
 
     private void addCustomEffect(ItemStack itemStack, Level level, LivingEntity entity) {
         if (itemStack == getStack(Init.CREEPER_HEART)) {
-            explosiveEffectRand(level, entity);
+            //Boom Effect
         } else if (itemStack == getStack(Init.ENDERMAN_HEART)) {
-            randTeleEffect(level, entity);
+            //EnderEffect
         } else if (itemStack == getStack(Init.GHAST_HEART)) {
-            spawnFireBall(level, entity);
-        } else if (itemStack == getStack(Init.PANDA_HEART)) {
-
-        } else if (itemStack == getStack(Init.PIG_HEART)) {
-
+            //GhastEffect
         } else if (itemStack == getStack(Init.PHANTOM_HEART)) {
-
+            //ItsHotOutThereEffect
         } else if (itemStack == getStack(Init.PIGLIN_HEART)) {
-
-        } else if (itemStack == getStack(Init.PILLAGER_HEART)) {
-
-        } else if (itemStack == getStack(Init.RABBIT_HEART)) {
-
+            //OhShinyEffect
         } else if (itemStack == getStack(Init.SHEEP_HEART)) {
-
-        } else if (itemStack == getStack(Init.SHULKER_HEART)) {
-
+            //ShearMeEffect
         } else if (itemStack == getStack(Init.SLIME_HEART)) {
-
+            //SlimyEffect
         } else if (itemStack == getStack(Init.SPIDER_HEART)) {
-
+            //ShootTheWebEffect
         } else if (itemStack == getStack(Init.SQUID_HEART)) {
-
-        } else if (itemStack == getStack(Init.STRIDER_HEART)) {
-
-        } else if (itemStack == getStack(Init.TURTLE_HEART)) {
-
-        } else if (itemStack == getStack(Init.VILLGER_HEART)) {
-
+            //CanIBorrowSomeInkEffect
         } else if (itemStack == getStack(Init.WITCH_HEART)) {
-
-        } else if (itemStack == getStack(Init.WITHER_HEART)) {
-
-        } else if (itemStack == getStack(Init.WOLF_HEART)) {
-
+            //IamImmortalEffect
         } else if (itemStack == getStack(Init.ZOMPIE_HEART)) {
-
-        }
-    }
-
-    private void spawnFireBall(Level level, LivingEntity entity) {
-        BlockPos blockpos = entity.getOnPos();
-        if (BaseFireBlock.canBePlacedAt(level, blockpos, entity.getDirection())) {
-            this.playFireChargeSound(level, blockpos);
-            level.setBlockAndUpdate(blockpos, BaseFireBlock.getState(level, blockpos));
-            level.gameEvent(entity, GameEvent.BLOCK_PLACE, blockpos);
-        }
-    }
-    private
-    void playFireChargeSound(Level p_41206_, BlockPos p_41207_) {
-        Random random = p_41206_.getRandom();
-        p_41206_.playSound(null, p_41207_, SoundEvents.FIRECHARGE_USE, SoundSource.BLOCKS, 1.0F, (random.nextFloat() - random.nextFloat()) * 0.2F + 1.0F);
-    }
-
-    private void randTeleEffect(Level level, LivingEntity entity) {
-        BlockPos pos = entity.getOnPos();
-        int x = pos.getX();
-        int y = pos.getY();
-        int z = pos.getZ();
-        for (int i = 0; i < 5; i++) {
-            Random r = new Random();
-            x = x + i + r.nextInt(6);
-            y = y + i + r.nextInt(2);
-            z = z + i + r.nextInt(6);
-            entity.teleportTo(x, y ,z);
-        }
-    }
-
-    private void explosiveEffectRand(Level level, LivingEntity entity) {
-        if (!level.isClientSide) {
-            BlockPos pos = entity.getOnPos();
-            int x = pos.getX();
-            int y = pos.getY();
-            int z = pos.getZ();
-            for (int i = 0; i < 5; i++) {
-                Random r = new Random();
-                level.explode(entity, x + i + r.nextInt(10), y, z + i + r.nextInt(10), i + 2, Explosion.BlockInteraction.DESTROY);
-            }
+            //ItsHotOutThereEffect
+        } else if (itemStack == getStack(Init.COW_HEART)) {
+            //MilkMeEffect
+        } else if (itemStack == getStack(Init.BEE_HEART)) {
+            //GiveMeSomeHoney
         }
     }
 

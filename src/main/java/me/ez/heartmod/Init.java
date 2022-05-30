@@ -15,8 +15,8 @@ public class Init {
     public static final RegistryObject<Item> CHICKEN_HEART = HEARTS.register("chicken_heart", () -> new Heart(1.0F, MobEffects.SLOW_FALLING, 2F, false));
     public static final RegistryObject<Item> COW_HEART = HEARTS.register("cow_heart", () -> new Heart(1.5F, null, 0, true));
     public static final RegistryObject<Item> SHEEP_HEART = HEARTS.register("sheep_heart", () -> new Heart(1.5F, null, 0, true));
-    public static final RegistryObject<Item> PIG_HEART = HEARTS.register("pig_heart", () -> new Heart(2.0F, null, 0, true));
-    public static final RegistryObject<Item> VILLGER_HEART = HEARTS.register("villger_heart", () -> new Heart(2.0F, null, 0, true));
+    public static final RegistryObject<Item> PIG_HEART = HEARTS.register("pig_heart", () -> new Heart(2.0F, null, 0, false));
+    public static final RegistryObject<Item> VILLGER_HEART = HEARTS.register("villger_heart", () -> new Heart(2.0F, null, 0, false));
     public static final RegistryObject<Item> AXOLOTL_HEART = HEARTS.register("axolotl_heart", () -> new Heart(0.5F, MobEffects.WATER_BREATHING, 2F, false));
     public static final RegistryObject<Item> CAT_HEART = HEARTS.register("cat_heart", () -> new Heart(1.0F, MobEffects.SLOW_FALLING, 2F, false));
     public static final RegistryObject<Item> HORSE_HEART = HEARTS.register("horse_heart", () -> new Heart(2.0F, MobEffects.MOVEMENT_SPEED, 2F, false));
@@ -31,7 +31,7 @@ public class Init {
     public static final RegistryObject<Item> IRON_GOLEM_HEART = HEARTS.register("iron_golem_heart", () -> new Heart(4.0F, MobEffects.DAMAGE_RESISTANCE, 5F, false));
     public static final RegistryObject<Item> SLIME_HEART = HEARTS.register("slime_heart", () -> new Heart(1.5F, MobEffects.JUMP, 2f, true));
     public static final RegistryObject<Item> PIGLIN_HEART = HEARTS.register("piglin_heart", () -> new Heart(3.0F, null, 0f, true));
-    public static final RegistryObject<Item> WOLF_HEART = HEARTS.register("wolf_heart", () -> new Heart(2.0F, null, 0f, true));
+    public static final RegistryObject<Item> WOLF_HEART = HEARTS.register("wolf_heart", () -> new Heart(2.0F, null, 0f, false));
     public static final RegistryObject<Item> DOLPHIN_HEART = HEARTS.register("dolphin_heart", () -> new Heart(3.0F, MobEffects.DOLPHINS_GRACE, 4, false));
     public static final RegistryObject<Item> BEE_HEART = HEARTS.register("bee_heart", () -> new Heart(0.5F, null, 0, true));
 
@@ -45,8 +45,8 @@ public class Init {
     public static final RegistryObject<Item> HOGLIN_HEART = HEARTS.register("hoglin_heart", () -> new Heart(4.0F, null, 0, false));
     public static final RegistryObject<Item> PILLAGER_HEART = HEARTS.register("pillager_heart", () -> new Heart(2.0F, null, 0, false));
     public static final RegistryObject<Item> ILLAGER_HEART = HEARTS.register("illager_heart", () -> new Heart(2.0F,null, 0,false));
-    public static final RegistryObject<Item> WITHER_HEART = HEARTS.register("wither_heart", () -> new Heart(15.0F, null, 0, true));
-    public static final RegistryObject<Item> ELDER_GUARDIAN_HEART = HEARTS.register("elder_guardian_heart", () -> new Heart(10.0F, MobEffects.WATER_BREATHING, 6 ,true));
+    public static final RegistryObject<Item> WITHER_HEART = HEARTS.register("wither_heart", () -> new Heart(15.0F, null, 0, false));
+    public static final RegistryObject<Item> ELDER_GUARDIAN_HEART = HEARTS.register("elder_guardian_heart", () -> new Heart(10.0F, MobEffects.WATER_BREATHING, 6 ,false));
     public static final RegistryObject<Item> WITCH_HEART = HEARTS.register("witch_heart", () -> new Heart(4.0F, null, 0 , true));
 
 
