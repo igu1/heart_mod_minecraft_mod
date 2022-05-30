@@ -44,7 +44,7 @@ public class Init {
     public static final RegistryObject<Item> ENDERMAN_HEART = HEARTS.register("enderman_heart", () -> new Heart(5.0F, null, 0, true));
     public static final RegistryObject<Item> HOGLIN_HEART = HEARTS.register("hoglin_heart", () -> new Heart(4.0F, null, 0, false));
     public static final RegistryObject<Item> PILLAGER_HEART = HEARTS.register("pillager_heart", () -> new Heart(2.0F, null, 0, false));
-    public static final RegistryObject<Item> ILLAGER_HEART = HEARTS.register("illager_heart", () -> new Heart(2.0F,null, 0,false));
+//    public static final RegistryObject<Item> ILLAGER_HEART = HEARTS.register("illager_heart", () -> new Heart(2.0F,null, 0,false));
     public static final RegistryObject<Item> WITHER_HEART = HEARTS.register("wither_heart", () -> new Heart(15.0F, null, 0, false));
     public static final RegistryObject<Item> ELDER_GUARDIAN_HEART = HEARTS.register("elder_guardian_heart", () -> new Heart(10.0F, MobEffects.WATER_BREATHING, 6 ,false));
     public static final RegistryObject<Item> WITCH_HEART = HEARTS.register("witch_heart", () -> new Heart(4.0F, null, 0 , true));
