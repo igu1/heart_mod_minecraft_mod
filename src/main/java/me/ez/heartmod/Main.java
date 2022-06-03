@@ -20,6 +20,7 @@ public class Main
     {
         Init.HEARTS.register(FMLJavaModLoadingContext.get().getModEventBus());
         Init.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        Init.EFFECTS.register(FMLJavaModLoadingContext.get().getModEventBus());
         MinecraftForge.EVENT_BUS.register(this);
     }
 

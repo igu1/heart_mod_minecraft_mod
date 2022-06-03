@@ -1,6 +1,9 @@
 package me.ez.heartmod;
 
+import me.ez.heartmod.Common.Effects.*;
 import me.ez.heartmod.Common.Items.Heart;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
@@ -53,5 +56,12 @@ public class Init {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Main.MOD_ID);
     public static final RegistryObject<Item> TEST_ITEM = HEARTS.register("test_item", () -> new Heart(4.0F, null, 0 , true));
 
+    //Effects
+    public static final DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, Main.MOD_ID);
+    public static final RegistryObject<BoomEffect> BOOM_EFFECT_REGISTRY_OBJECT = EFFECTS.register("boom_effect", () -> new BoomEffect(MobEffectCategory.BENEFICIAL, 8171462));
+    public static final RegistryObject<EnderEffect> ENDER_EFFECT_REGISTRY_OBJECT = EFFECTS.register("ender_effect", () -> new EnderEffect(MobEffectCategory.BENEFICIAL, 8171462));
+    public static final RegistryObject<GiveMeSomeHoney> GIVE_ME_SOME_HONEY_REGISTRY_OBJECT = EFFECTS.register("givemesomehoney_effect", GiveMeSomeHoney::new);
+    public static final RegistryObject<ItsHotOutThereEffect> ITS_HOT_OUT_THERE_EFFECT_REGISTRY_OBJECT = EFFECTS.register("itshotoutthere_effect", ItsHotOutThereEffect::new);
+    public static final RegistryObject<ShearMeEffect> SHEAR_ME_EFFECT_REGISTRY_OBJECT = EFFECTS.register("shearme_effect", ShearMeEffect::new);
 
 }
